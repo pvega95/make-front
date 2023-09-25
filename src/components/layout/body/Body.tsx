@@ -1,4 +1,3 @@
-import { ECCard } from "../../Card/Card";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";
 import { useQuery } from 'react-query'
@@ -18,15 +17,14 @@ export const Body = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { isLoading, isError, data, error, isSuccess } = useQuery('todos', fetchMovies)
+  const { isLoading, isError, data, isSuccess } = useQuery('todos', fetchMovies)
 
   if (isLoading) {
     return <span>Loading...</span>
   }
 
   if (isError) {
-    console.log('error')
-    return <span>Error: </span>
+    return <span>Something when wrong ...</span>
   }
 
   if(isSuccess) {
@@ -42,13 +40,13 @@ export const Body = () => {
 
   return (
     <Box>
-      <Grid container spacing={2}>
-        <Grid xs={1}>
+      <Grid container spacing={2} margin={2}>
+        <Grid xs={6} md={6}>
           <div onClick={() => handleRedirect("series")}>
             <CardCategory title='SERIES' description='Popular Series' />
           </div>
         </Grid>
-        <Grid xs={1}>
+        <Grid xs={6} md={6}>
           <div onClick={() => handleRedirect("movies")}>
             <CardCategory title='MOVIES' description='Popular Movies'/>
           </div>

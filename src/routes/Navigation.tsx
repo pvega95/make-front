@@ -8,6 +8,7 @@ import { Title } from "../components/layout/title/Title";
 import { Body } from "../components/layout/body/Body";
 import { ListMovies } from "../components/ListMovies/ListMovies";
 import { TypeMovie } from "../constant/type-movies";
+import { Footer } from "../components/footer/Footer";
 
 export const Navigation = () => {
   return (
@@ -23,6 +24,7 @@ export const Navigation = () => {
           <Route path="/" element={ <Body/> }>
           </Route>
         </Routes>
+        <Footer/>
       </div>
     </Router>
   );

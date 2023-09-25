@@ -1,4 +1,3 @@
-import React from "react";
 import { ECTitle } from "./styles";
 import { Typography } from "@mui/material";
 
